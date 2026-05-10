@@ -1,11 +1,13 @@
-# Простой To-Do List
+
 tasks = []
 
 while True:
+    print("\n" + "="*30)
     print("1. Добавить задачу")
     print("2. Показать задачи")
     print("3. Удалить задачу")
     print("4. Выйти")
+    print("="*30)
     
     choice = input("Выберите действие: ")
     
@@ -21,17 +23,27 @@ while True:
             print("\nВаши задачи:")
             for i, task in enumerate(tasks, 1):
                 print(f"{i}. {task}")
-
-
-
-
-
-
-
-
-
-я ебал эито все
-
     
-  
-  
+    elif choice == "3":
+        if not tasks:
+            print("Нет задач для удаления!")
+        else:
+            print("\nВаши задачи:")
+            for i, task in enumerate(tasks, 1):
+                print(f"{i}. {task}")
+            try:
+                num = int(input("Номер задачи для удаления: "))
+                if 1 <= num <= len(tasks):
+                    deleted = tasks.pop(num-1)
+                    print(f"Задача '{deleted}' удалена!")
+                else:
+                    print("Неверный номер!")
+            except:
+                print("Введите число!")
+    
+    elif choice == "4":
+        print("До свидания!")
+        break
+    
+    else:
+        print("Неверный выбор!")
