@@ -21,6 +21,17 @@ while True:
             print("\nВаши задачи:")
             for i, task in enumerate(tasks, 1):
                 print(f"{i}. {task}")
+
+
+
+
+
+
+
+
+
+я ебал эито все
+
     
   
   
